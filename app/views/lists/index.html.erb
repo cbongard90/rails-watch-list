@@ -1,0 +1,16 @@
+<div class="banner" style='background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("https://images.pexels.com/photos/109669/pexels-photo-109669.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")'>
+
+</div>
+
+<div class="container">
+  <%= link_to 'Create a movie list',new_list_path, class:'btn btn-success' %>
+  <h2>My Lists</h2>
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <%= link_to list.name, list_path(list),
+      class:'card-category',
+      style:"background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(#{list.picture_url})" %>
+    <% end %>
+  </div>
+
+</div>

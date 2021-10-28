@@ -1,0 +1,22 @@
+<div class="banner" style='background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(<%= @list.picture_url%>)'>
+</div>
+<div class="container">
+  <%= link_to 'Add a movie',lists_path, class:'btn btn-success' %>
+  <h2> <%= @movies.count %> Movies</h2>
+  <div class="cards">
+    <% @movies.each do |movie| %>
+      <div class="card-trip">
+      <%= image_tag movie.poster_url %>
+      <div class="card-trip-infos">
+      <div>
+        <h2><%= movie.title %></h2>
+        <p><%= movie.overview %></p>
+      </div>
+      <h2 class="card-trip-pricing"><%= movie.rating %></h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
+</div>
+
+    <% end %>
+  </div>
+</div>
