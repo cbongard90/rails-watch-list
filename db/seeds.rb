@@ -19,4 +19,7 @@ Movie.create(title: "Batman Begins", overview: "Driven by tragedy, billionaire B
 Movie.create(title: "Gladiator", overview: "In the year 180, the death of emperor Marcus Aurelius throws the Roman Empire into chaos. Maximus is one of the Roman army's most capable and trusted generals and a key advisor to the emperor. As Marcus' devious son Commodus ascends to the throne, Maximus is set to be executed. He escapes, but is captured by slave traders. Renamed Spaniard and forced to become a gladiator, Maximus must battle to the death with other men for the amusement of paying audiences.", poster_url: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/rotQFyaeNQivUJOm3J3M7YqPNMx.jpg", rating: 8.2)
 Movie.create(title: "Star Wars", overview: "Princess Leia is captured and held hostage by the evil Imperial forces in their effort to take over the galactic Empire. Venturesome Luke Skywalker and dashing captain Han Solo team together with the loveable robot duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and justice in the Empire.", poster_url: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg", rating: 8.5)
 
-puts "Completed"3
+puts "Completed 10 movies"
+puts "creating 2 lists"
+list1 = List.create(name: "My favourite movies", picture_url: "https://images.pexels.com/photos/1387577/pexels-photo-1387577.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+list2 = List.create(name: "Worth rewatching", picture_url: "https://images.pexels.com/photos/2145/sea-sunset-beach-couple.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
