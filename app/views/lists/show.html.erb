@@ -1,7 +1,7 @@
 <div class="banner" style='background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(<%= @list.picture_url%>)'>
 </div>
 <div class="container">
-  <%= link_to 'Add a movie',lists_path, class:'btn btn-success' %>
+  <%= link_to 'Add a movie',new_list_bookmark_path(@list), class:'btn btn-success' %>
   <h2> <%= @movies.count %> Movies</h2>
   <div class="cards">
     <% @movies.each do |movie| %>
