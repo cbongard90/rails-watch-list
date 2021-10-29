@@ -11,6 +11,7 @@ require("channels")
 
 import "bootstrap";
 import "select2";
+import "jquery-bar-rating"
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -26,8 +27,15 @@ $(document).ready(function () {
   $(".js-example-basic-single").select2();
 });
 
+$(function () {
+  $("#example").barrating({
+    theme: "fontawesome-stars",
+  });
+});
+
 document.addEventListener("turbolinks:load", () => {
   // Call your JS functions here
   // [...]
   loadDynamicBannerText();
 });
+3
