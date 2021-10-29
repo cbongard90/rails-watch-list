@@ -1,3 +1,4 @@
+require 'open-uri'
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -8,6 +9,7 @@
 #movie
 puts "Destroying the previous database"
 Movie.destroy_all
+List.destroy_all
 puts "Adding 10 movies"
 
 Movie.create(title: "Wonder Woman 1984", overview: "Wonder Woman comes into conflict with the Soviet Union during the Cold War in the 1980s", poster_url: "https://image.tmdb.org/t/p/original/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg", rating: 6.9)
@@ -21,5 +23,13 @@ Movie.create(title: "Star Wars", overview: "Princess Leia is captured and held h
 
 puts "Completed 10 movies"
 puts "creating 2 lists"
-list1 = List.create(name: "My favourite movies", picture_url: "https://images.pexels.com/photos/1387577/pexels-photo-1387577.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
-list2 = List.create(name: "Worth rewatching", picture_url: "https://images.pexels.com/photos/2145/sea-sunset-beach-couple.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+puts "opening the 2 urls"
+photo1 = URI.open('https://images.pexels.com/photos/1387577/pexels-photo-1387577.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
+photo2 = URI.open('https://images.pexels.com/photos/2145/sea-sunset-beach-couple.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
+
+
+list1 = List.create(name: 'My favourite movies')
+list2 = List.create(name: 'Worth rewatching')
+
+list1.photo.attach(io: photo1, filename: 'list1.jpg', content_type: 'image/jpeg')
+list2.photo.attach(io: photo2, filename: 'list2.jpg', content_type: 'image/jpeg')
