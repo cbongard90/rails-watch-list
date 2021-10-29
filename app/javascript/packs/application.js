@@ -10,6 +10,7 @@ require("@rails/activestorage").start()
 require("channels")
 
 import "bootstrap";
+import "select2";
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -19,6 +20,11 @@ import "bootstrap";
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import { loadDynamicBannerText } from "../components/banner";
+
+
+$(document).ready(function () {
+  $(".js-example-basic-single").select2();
+});
 
 document.addEventListener("turbolinks:load", () => {
   // Call your JS functions here

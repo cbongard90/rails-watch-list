@@ -24,16 +24,16 @@
             <p><%= movie.overview %></p>
           </div>
         <h2 class="card-trip-pricing"><%= movie.rating %></h2>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
         </div>
       </div>
     <% end %>
+
   </div>
-  <div>
+  <div class='container col-6'>
     <%= simple_form_for([@list, @bookmark]) do |f| %>
-    <%= f.association :movie %>
-    <%= f.input :comment %>
-    <%= f.submit "Add a movie" %>
+    <%= f.association :movie,input_html: { class: 'js-example-basic-single'}%>
+    <%= f.input :comment, as: :text %>
+    <%= f.submit "Add a movie", class:'btn btn-success' %>
     <% end %>
   </div>
 </div>

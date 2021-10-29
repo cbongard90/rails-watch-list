@@ -165,7 +165,6 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    select2-rails (4.0.13)
     simple_form (5.1.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
@@ -212,13 +211,12 @@ DEPENDENCIES
   font-awesome-sass (~> 5.12.0)
   jbuilder (~> 2.7)
   listen (~> 3.2)
-  pg (>= 0.18, < 2.0)
+  pg
   puma (~> 4.1)
   rails (~> 6.0.4, >= 6.0.4.1)
   rails-controller-testing
   rspec-rails
   sass-rails (>= 6)
-  select2-rails
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
