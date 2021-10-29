@@ -27,9 +27,11 @@ puts "opening the 2 urls"
 photo1 = URI.open('https://images.pexels.com/photos/1387577/pexels-photo-1387577.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
 photo2 = URI.open('https://images.pexels.com/photos/2145/sea-sunset-beach-couple.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
 
-
-list1 = List.create(name: 'My favourite movies')
-list2 = List.create(name: 'Worth rewatching')
+list1 = List.new(name: 'My favourite movies')
+list2 = List.new(name: 'Worth rewatching')
 
 list1.photo.attach(io: photo1, filename: 'list1.jpg', content_type: 'image/jpeg')
 list2.photo.attach(io: photo2, filename: 'list2.jpg', content_type: 'image/jpeg')
+
+list1.save
+list2.save
