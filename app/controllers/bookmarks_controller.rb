@@ -20,6 +20,18 @@ class BookmarksController < ApplicationController
     end
   end
 
+  def destroy
+    @bookmark = Bookmark.find(params[:id])
+    if @bookmark.destroy
+      flash[:success] = 'Bookmark was successfully deleted.'
+      redirect_to list_path(@bookmark.list)
+    else
+      flash[:error] = 'Something went wrong'
+      redirect_to list_path(@bookmark.list)
+    end
+  end
+
+
   private
 
   def bookmark_params
